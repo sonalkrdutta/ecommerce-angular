@@ -12,14 +12,14 @@ import { DatabaseComponent } from './database/database.component';
   declarations: [
     AppComponent,
     RegistrationComponent,
-   	LoginComponent,
+      LoginComponent,
     DatabaseComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-	  FormsModule,
+	FormsModule,
     HttpClientModule,
     
   ],
