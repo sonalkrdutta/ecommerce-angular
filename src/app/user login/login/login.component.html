@@ -1,56 +1,61 @@
 <!--main app container -->
 
 <div class="container">
-    <div class="row">
-        <div class="col-md-6 offset-md-3">
-            <h2 class="text-center">Login Form</h2>
-
-            <div class="jumbotron">
-                <form [formGroup]="loginForm" class="text-center border border-light p-5" novalidate>
-                    <!--<div class="form-group">
-                        <label>First Name</label>
-                        <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
-                        <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
-                            <div *ngIf="f.firstName.errors.required">First Name is required</div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label>Last Name</label>
-                        <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
-                        <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
-                            <div *ngIf="f.lastName.errors.required">Last Name is required</div>
-                        </div>
-                    </div>-->
-                    <div class="form-group">
-                        <label>Email</label>
-                        <input class="form-control mb-4" formControlName="email" type="text">
-                    </div>
-
-                    <div *ngIf="loginForm.controls['email'].invalid && (loginForm.controls['email'].dirty || loginForm.controls['email'].touched)"
-                        class="alert alert-danger">
-                        <!---- <div *ngIf="f.email.errors.required">Email is required</div>
-                            <div *ngIf="f.email.errors.email">Email must be a valid email address</div>-->
-                        Email is required.
-                    </div>
-
-                    <div class="form-group">
-                        <label>Password</label>
-                        <input class="form-control" formControlName="password" type="password">
-                    </div>
-                    <div *ngIf="loginForm.controls['password'].invalid && (loginForm.controls['password'].dirty || loginForm.controls['password'].touched)"
-                        class="alert alert-danger">
-
-                        <!--<div *ngIf="submitted && f.password.errors" class="invalid-feedback"></div>
-                             <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>-->
-                        password must be 10 digit.
-                    </div>
-                    <br>
-                    <div class="form-group">
-                        <button class="btn btn-outline-primary" [disabled]="loginForm.pristine || loginForm.invalid"
-                            type="submit" (click)="loginData(loginForm.value)">Login</button>
-                    </div>
-                </form>
-            </div>
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h2 class="text-center">Login Form</h2>
+      <form
+        [formGroup]="loginForm"
+        class="text-center border border-light p-5"
+        novalidate
+      >
+        <label class="form-label">Email</label>
+        <input class="form-control" formControlName="email" type="text" />
+        <div class="line-box">
+          <div class="line"></div>
         </div>
+        <div
+          *ngIf="
+            loginForm.controls['email'].invalid &&
+            (loginForm.controls['email'].dirty ||
+              loginForm.controls['email'].touched)
+          "
+          class="alert alert-danger"
+        >
+          Email is required.
+        </div>
+
+        <label class="form-label">Password</label>
+        <input
+          class="form-control"
+          formControlName="password"
+          type="password"
+        />
+        <div class="line-box">
+          <div class="line"></div>
+        </div>
+        <div
+          *ngIf="
+            loginForm.controls['password'].invalid &&
+            (loginForm.controls['password'].dirty ||
+              loginForm.controls['password'].touched)
+          "
+          class="alert alert-danger"
+        >
+          password must be 10 digit.
+        </div>
+        <br />
+        <div class="form-group">
+          <button
+            class="btn btn-outline-primary"
+            [disabled]="loginForm.pristine || loginForm.invalid"
+            type="submit"
+            (click)="loginData(loginForm.value)"
+          >
+            Login
+          </button>
+        </div>
+      </form>
     </div>
+  </div>
 </div>
