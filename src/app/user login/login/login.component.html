@@ -1,0 +1,62 @@
+<!--main app container -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h2 class="text-center">Login Form</h2>
+      <form
+        [formGroup]="loginForm"
+        class="text-center border border-light p-5"
+        novalidate
+      >
+        <label class="form-label">Email</label>
+        <input class="form-control" formControlName="email" type="text" />
+        <div class="line-box">
+          <div class="line"></div>
+        </div>
+        <div
+          *ngIf="
+            loginForm.controls['email'].invalid &&
+            (loginForm.controls['email'].dirty ||
+              loginForm.controls['email'].touched)
+          "
+          class="alert alert-danger"
+        >
+          Email is required.
+        </div>
+
+        <label class="form-label">Password</label>
+        <input
+          class="form-control"
+          formControlName="password"
+          type="password"
+        />
+        <div class="line-box">
+          <div class="line"></div>
+        </div>
+        <div
+          *ngIf="
+            loginForm.controls['password'].invalid &&
+            (loginForm.controls['password'].dirty ||
+              loginForm.controls['password'].touched)
+          "
+          class="alert alert-danger"
+        >
+          password must be 10 digit.
+        </div>
+        <br />
+        <div class="form-group">
+          <button
+            class="btn btn-outline-primary"
+            [disabled]="loginForm.pristine || loginForm.invalid"
+            type="submit"
+            (click)="loginData(loginForm.value)"
+          >
+            Login</button
+          ><br />
+          <a class="button" routerLink="/register">not registered?</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
