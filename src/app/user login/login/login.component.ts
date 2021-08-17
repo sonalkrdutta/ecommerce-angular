@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
     this.loginservice.Getdata(data).subscribe(res=> {
       this.responsedata=res
       if (this.responsedata.status==200){
-        this.route.navigate(["/database"])
+        this.route.navigate([""])
       }
       else if(this.responsedata.status== 401){
         alert("Your Email/Password is Incorrect..!!")

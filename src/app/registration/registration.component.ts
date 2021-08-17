@@ -10,8 +10,10 @@ export class RegistrationComponent implements OnInit {
   angForm: FormGroup;
   constructor(private fb: FormBuilder, private SubmitReg: RegistrationService) {
     this.angForm = this.fb.group({
-      name: ['', Validators.required ],
-      email: ['', Validators.required ],
+      firstname: ['', Validators.required ],
+      lastname: ['', Validators.required ],
+      phone: ['', [Validators.required,Validators.maxLength(10)]],
+      email: ['', Validators.required,Validators.email ],
       password:['',Validators.required]
    });
    }

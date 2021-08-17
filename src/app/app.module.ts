@@ -9,6 +9,7 @@ import { LoginComponent } from './user login/login/login.component';
 import { DatabaseComponent } from './database/database.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeaderComponent } from './header/header.component';
+import { CreateProductComponent } from './create-product/create-product.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { HeaderComponent } from './header/header.component';
     DatabaseComponent,
     DashboardComponent,
     HeaderComponent,
+    CreateProductComponent,
   ],
   imports: [
     BrowserModule,
